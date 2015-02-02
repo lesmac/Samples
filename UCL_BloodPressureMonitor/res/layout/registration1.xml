@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/txt_doyouhavearrhythmia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:text="@string/arrhythmia" >
+
+        <requestFocus />
+    </TextView>
+
+    <Button
+        android:id="@+id/btn_registration1yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_doyouhavearrhythmia"
+        android:layout_centerVertical="true"
+        android:text="@string/yes" />
+
+    <Button
+        android:id="@+id/btn_registration1no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/txt_doyouhavearrhythmia"
+        android:layout_centerVertical="true"
+        android:text="@string/no" />
+
+</RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/medicationNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/medicationYes"
+        android:layout_alignBottom="@+id/medicationYes"
+        android:layout_alignRight="@+id/medicationyesno"
+        android:text="@string/no" />
+
+    <TextView
+        android:id="@+id/medicationyesno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:text="@string/medicationyesno" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nhsNo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/newun" />
+
+    <Button
+        android:id="@+id/reg3next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/next" />
+
+    <Button
+        android:id="@+id/medicationYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/medicationyesno"
+        android:layout_below="@+id/medicationyesno"
+        android:text="@string/yes" />
+
+    <EditText
+        android:id="@+id/specifykind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/medicationYes"
+        android:layout_below="@+id/medicationNo"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="@string/specifykind" />
+
+    <EditText
+        android:id="@+id/nhsNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/specifykind"
+        android:layout_below="@+id/specifykind"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/nhsno" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/username"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/newpwd" />
+
+</RelativeLayout>

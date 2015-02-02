@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/timeframe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/timeframe" />
+
+    <Button
+        android:id="@+id/btn_entertime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        android:text="@string/OK" />
+
+    <Button
+        android:id="@+id/StartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/timeframe"
+        android:layout_marginTop="26dp"
+        android:layout_toLeftOf="@+id/StartDate"
+        android:text="Start Time" />
+
+    <Button
+        android:id="@+id/EndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_entertime"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/EndDate"
+        android:text="EndTime" />
+
+    <Button
+        android:id="@+id/StartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/StartTime"
+        android:layout_alignBottom="@+id/StartTime"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/btn_entertime"
+        android:text="StartDate" />
+
+    <Button
+        android:id="@+id/EndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_entertime"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/btn_entertime"
+        android:text="EndDate" />
+
+</RelativeLayout>

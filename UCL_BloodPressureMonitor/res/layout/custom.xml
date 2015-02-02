@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+ <requestFocus />
+
+    <TextView
+        android:id="@+id/noreadings"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/noreadings"
+        android:layout_alignBottom="@+id/noreadings"
+        android:layout_alignParentRight="true"
+        android:text="@string/noreadings"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/durationcust"
+        android:text="@string/duration"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/noreadingscust"
+        android:layout_width="84dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/durationcust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/intervalcust"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/interval"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/noreadingscust"
+        android:text="@string/interval"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/intervalcust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/interval"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/interval"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/begincuffstudycust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="71dp"
+        android:layout_marginLeft="33dp"
+        android:text="@string/OK" />
+
+    <Button
+        android:id="@+id/clear24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/begincuffstudycust"
+        android:layout_alignLeft="@+id/interval"
+        android:text="@string/clear" />
+
+</RelativeLayout>

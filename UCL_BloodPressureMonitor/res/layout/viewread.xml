@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <TextView
+        android:id="@+id/ReadingNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/ReadingNo" />
+    <TextView
+        android:id="@+id/readingnumview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ReadingNo"
+        android:layout_marginTop="20dp"
+        android:text="empty" />
+    	
+    <EditText
+        android:id="@+id/ShowSys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ReadingNo"
+        android:layout_marginTop="66dp"
+       
+        android:ems="10"
+        android:hint="@string/ShowSys" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/nextRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="67dp"
+        android:text="@string/OKNext" />
+
+<!--     <Button
+        android:id="@+id/manreaddone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nextRead"
+        android:layout_alignBottom="@+id/nextRead"
+        android:layout_toRightOf="@+id/ReadingNo"
+        android:text="@string/Done" /> -->
+
+    <EditText
+        android:id="@+id/ShowDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/nextRead"
+        android:ems="10"
+        android:hint="@string/ShowDia" />
+
+    <TextView
+        android:id="@+id/readtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/manreaddone"
+        android:layout_below="@+id/ShowDia"
+        android:text="time" />
+
+    <TimePicker
+        android:id="@+id/timePickerVR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nextRead"
+        android:layout_toRightOf="@+id/readingnumview" />
+
+</RelativeLayout>

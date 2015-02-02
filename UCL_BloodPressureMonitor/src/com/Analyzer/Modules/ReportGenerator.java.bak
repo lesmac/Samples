@@ -1,0 +1,234 @@
+package com.Analyzer.Modules;
+
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+
+public class ReportGenerator {
+	Activity act;
+	
+	private float y; // print indicator;
+	
+	private final float BmpSizeX = 210*5;
+	private final float BmpSizeY = 297*5;
+	
+	private final float PARA_GAP = 50;
+	private final float LINE_GAP = 20;
+	
+	private final float CENTERX = BmpSizeX/2; 
+	private final float LEFT_EDGE = 100;
+	
+	
+	private final float Y_1st_LINE = 150;
+	
+	
+	
+	private final String[][] C_USERINFO = {{"Patient Name:", 
+		                                      "Patient ID:", 
+		                                      "Height:",  
+		                                      "Weight:",},
+		                                     {"Date of Birth:", 
+		                                      "Age:", 
+		                                      "Gender:", 
+		                                      "Race:"}};
+		                                                       
+	private final String[] STUDY = {"Study Date:","Study Time:"};
+	
+	private final String[] OTHER = {"Attending Physician:","Technician:"};
+	
+	private final String[] Summary1 = {"Total Rec. Time",     
+		                                 "Statistics Intervals from Ambulatory BP Device",
+		                                 "Duration Day Time", 
+		                                 "Duration Night Time",
+		                                 "Measuring Method"};
+	private final String Summary2 = {"24h Average sys/dia(mmHg)"};
+	private final String[] Summary3 = {"Day Time",        	                                 
+		                               "Valid measurements: 24 of 33 (72%)", 
+		                               "Syst. BP readings above 135 mmHg (%)",
+		                               "Diast. BP readings above 85 mmHg (%)"};
+	private final String[] Summary4 = {"Night/Wake-up Time",                              
+		                                 "Valid measurements: 9 of 9 (100%)",
+		                                 "Syst. BP readings above 125 mmHg (%)",
+		                                 "Diast. BP readings above 80 mmHg (%)"};
+		                                 
+	private final String[] Summary5 = {"Day-Time Average sys/dia(mmHg)", 	                                                                   
+		                                 "Night-Time Average sys/dia(mmHg)",	                                                                   
+		                                 "Diff.Day/Night Avg. sys/dia(%)"}
+	
+    public ReportGenerator(Activity act){
+    	y = 0;
+    	this.act = act;
+    }
+    
+    
+    public Bitmap drawFullReport(){
+    	
+    	Bitmap freport = Bitmap.createBitmap(210*5, 297*5, Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(freport);
+		Paint mPaint = new Paint();
+		
+		c.drawColor(Color.GRAY);
+		//initialize paint
+		mPaint.setAntiAlias(true);
+		mPaint.setColor(Color.BLACK);
+		mPaint.setTextAlign(Paint.Align.CENTER);
+		mPaint.setTextSize(20);
+		mPaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+		
+		c.drawText("AMBULATORY BLOOD PRESSURE REPORT", CENTERX,Y_1st_LINE, mPaint);
+		
+		mPaint.setTextSize(18);
+		mPaint.setTextAlign(Paint.Align.LEFT);
+		mPaint.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+		
+		y = Y_1st_LINE + PARA_GAP;
+	    for(int i=0;i<C_USERINFO.length;i++){
+	    	float temp = y;
+	  	    for(int j=0;j<C_USERINFO[i].length;j++){
+	  		    temp = y + LINE_GAP*j;
+	  		    c.drawText(C_USERINFO[i][j], LEFT_EDGE+CENTERX*i, temp, mPaint); 
+	  	
+	        }
+	  	    if(i == C_USERINFO.length-1){
+	  	    	y = temp;
+	  	    }
+		}
+	    
+	    y = y + PARA_GAP;
+	    for(int i=0;i<STUDY.length;i++){
+	    	float temp = y + LINE_GAP*i;
+	    	c.drawText(STUDY[i], LEFT_EDGE, temp, mPaint); 
+	    }
+		
+	    for(int i=0;i<OTHER.length;i++){
+	    	c.drawText(OTHER[i], LEFT_EDGE+CENTERX, y + LINE_GAP*i, mPaint); 
+	    	if(i == OTHER.length-1){
+	    		y = y + LINE_GAP*i;
+	    	}
+	    }
+	    
+		
+	    		
+		mPaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+		
+		y = y + PARA_GAP;
+		
+		c.drawText("Medication", LEFT_EDGE, y, mPaint);
+		c.drawText("Comment", LEFT_EDGE, y = y + LINE_GAP, mPaint);
+		c.drawText("Reason for test", LEFT_EDGE, y = y + LINE_GAP, mPaint);
+		
+		
+		mPaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+		
+		c.drawText("Summary", LEFT_EDGE, y = y + PARA_GAP, mPaint);
+		c.drawLine(LEFT_EDGE, y+5, LEFT_EDGE+80, y+5, mPaint);
+		
+		
+		
+		
+		mPaint.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
+		
+		
+		c.drawText("Statistics Summary from"+ "11:35" + "until" + "12:38 (2nd day)",
+				LEFT_EDGE,y + PARA_GAP,mPaint);
+		
+		/*		  
+		c.drawText("Total Rec. Time", 525, 200, mPaint);
+		c.drawText("Statistics Intervals from Ambulatory BP Device", 525, 200, mPaint);
+		c.drawText("Duration Day Time", 525, 200, mPaint);
+		c.drawText("Duration Night Time", 525, 200, mPaint);
+		c.drawText("Measuring Method", 525, 200, mPaint);
+		
+		c.drawText("24h Average sys/dia(mmHg)", 525, 200, mPaint);
+		
+		c.drawText("Day Time", 525, 200, mPaint);
+		c.drawText("Valid measurements: 24 of 33 (72%)", 525, 200, mPaint);
+		c.drawText("Syst. BP readings above 135 mmHg (%)", 525, 200, mPaint);
+		c.drawText("Diast. BP readings above 85 mmHg (%)", 525, 200, mPaint);
+		
+		c.drawText("Night/Wake-up Time", 525, 200, mPaint);
+		c.drawText("Valid measurements: 9 of 9 (100%)", 525, 200, mPaint);
+		c.drawText("Syst. BP readings above 125 mmHg (%)", 525, 200, mPaint);
+		c.drawText("Diast. BP readings above 80 mmHg (%)", 525, 200, mPaint);
+		
+		c.drawText("Day-Time Average sys/dia(mmHg)", 525, 200, mPaint);
+		
+		c.drawText("Night-Time Average sys/dia(mmHg)", 525, 200, mPaint);
+		
+		c.drawText("Diff.Day/Night Avg. sys/dia(%)", 525, 200, mPaint);
+		
+		c.drawText("Statistics Summary from"+ "11:35" + "until" + "12:38 (2nd day)",
+				  525,200,mPaint);
+		
+		
+		mPaint.setTextAlign(Paint.Align.CENTER);
+		
+		c.drawText("42" +" Blood Pressure Measurement(s)", 525, 200, mPaint);
+		
+		c.drawText("42" +" Blood Pressure Measurement(s)", 525, 200, mPaint);
+		
+		
+		
+		mPaint.setTextAlign(Paint.Align.LEFT);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("dia.BP", 525, 200, mPaint);
+		c.drawText("mn.BP", 525, 200, mPaint);
+		c.drawText("Heart Rate", 525, 200, mPaint);
+		
+		mPaint.setTextAlign(Paint.Align.CENTER);
+		
+		c.drawText("Minimum", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		
+		
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		
+		c.drawText("Maximum", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		
+		c.drawText("Average", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		
+		
+		c.drawText("SD", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		c.drawText("sys.BP", 525, 200, mPaint);
+		
+		
+        mPaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD_ITALIC));
+        mPaint.setTextAlign(Paint.Align.LEFT);
+        
+		c.drawText("Interpretation", 525, 200, mPaint);
+		*/
+		
+		
+		
+		
+		
+		
+		c.save();  
+		
+		return freport;
+    	
+    }
+}

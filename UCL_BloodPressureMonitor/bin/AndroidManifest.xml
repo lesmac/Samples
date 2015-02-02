@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.Common"
+    android:versionCode="1"
+    android:versionName="1.0" >
+ 
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+     <uses-permission android:name="android.permission.BLUETOOTH"/>
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name="com.Controller.AppState"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/android:Theme.Holo" >
+        <activity
+            android:name="com.UserInterface.Login"
+            android:label="@string/app_name" >
+            <intent-filter> 
+				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter> 
+				<action android:name="com.example.newtest.LOGIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+        <activity
+            android:name="com.UserInterface.CuffOrManualChoice"
+            android:label="@string/app_name" >
+            <intent-filter>
+               <action android:name="com.example.newtest.CUFFORMANUALCHOICE" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.Registration1"
+            android:label="@string/app_name" >
+            <intent-filter>
+               <action android:name="com.example.newtest.REGISTRATION1" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.Registration2"
+            android:label="@string/app_name" >
+            <intent-filter>
+               <action android:name="com.example.newtest.REGISTRATION2" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.Registration3"
+            android:label="@string/app_name" >
+            <intent-filter>
+               <action android:name="com.example.newtest.REGISTRATION3" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.UserInterface.InfoOK"
+            android:label="@string/app_name" >
+            <intent-filter>
+               <action android:name="com.example.newtest.INFOOK" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.CustomOr24"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.CUSTOMOR24" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.EnterReading"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.ENTERREADING" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.ViewRead"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.VIEWREAD" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.A24HrABP"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.A24HRABP" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.Custom"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.CUSTOM" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.RptOrMeas"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.RPTORMEAS" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.TimeFrame"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.TIMEFRAME" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.Report"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.REPORT" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.DataList"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.DATALIST" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.BTRead"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.BTREAD" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.UserInterface.EditListItem"
+            android:label="@string/app_name" >  
+            <intent-filter>
+               <action android:name="com.example.newtest.EDITLISTITEM" />
+               <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.DataInterface.BlueToothHDP.BluetoothHDPActivity">
+            <intent-filter>
+                 <action android:name="com.DataInterface.bluetooth" />
+                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.DataInterface.BlueToothHDP.BluetoothHDPService" />
+    </application>  
+
+</manifest>

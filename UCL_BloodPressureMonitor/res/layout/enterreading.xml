@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/ReadingNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EnterDia"
+        android:layout_alignParentTop="true"
+        android:text="@string/ReadingNo" />
+
+    <EditText
+        android:id="@+id/EnterSys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ReadingNo"
+        android:layout_marginTop="25dp"
+        android:layout_toLeftOf="@+id/ReadingNo"
+        android:ems="10"
+        android:hint="@string/EnterSys" />
+
+    <Button
+        android:id="@+id/clearread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/Clear" />
+
+    <Button
+        android:id="@+id/manreaddone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/OKRead"
+        android:text="@string/Done" />
+
+    <Button
+        android:id="@+id/OKRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/ReadingNo"
+        android:text="@string/OKNext" />
+
+    <TextView
+        android:id="@+id/readingnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/EnterSys"
+        android:layout_alignLeft="@+id/manreaddone"
+        android:layout_marginLeft="18dp"
+        android:text="empty" />
+
+    <Button
+        android:id="@+id/ERTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Time" />
+
+    <Button
+        android:id="@+id/ERDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ERTime"
+        android:layout_below="@+id/ERTime"
+        android:layout_marginTop="22dp"
+        android:text="Date" />
+
+    <EditText
+        android:id="@+id/EnterDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ERTime"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="@string/EnterDia" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>
