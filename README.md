@@ -1,5 +1,7 @@
 Samples
-This repository contains samples of work I have done in the past, 
-much of it while a student at UCL. Short samples are listed as .java files and 
-larger projects have their own project folders.
+This repository contains samples of work I have done in the past.
+UCL_BloodPressure Monitor is an android app, which was a group project at UCL. My primary 
+responsibility was designing and coding the UI.
+Checkerboard inverter is a demo plug-in I wrote for ImageJ.
+
 =======
