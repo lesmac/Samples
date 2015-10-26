@@ -7,4 +7,5 @@ responsibility was designing and coding the UI.
 
 Checkerboard inverter is a demo plug-in I wrote for ImageJ.
 
+Please also visit <a href="lesliemacmillan.com">lesliemacmillan.com</a>.
 =======
